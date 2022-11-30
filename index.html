@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Samsung SFT</title>
+  <title>KAWACH</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -35,7 +35,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Samsung Solve For Tomorrow</a></h1>
+      <h1 class="logo"><a href="index.html">Kawach</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -71,8 +71,38 @@
     
           <div class="text-md-right">
             <div class="count-box">
-              <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2"
-                class="purecounter"></span>
+                <div id="map"> </div>
+                <iframe style="border: 0; "
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDfsKKzpjgnUpjkDx59bdZKhmdlhp1vF8s&q=initMap" width="600"
+                  height="100" frameborder="0"></iframe>
+                
+                <style type="text/css">
+                  #map {
+                    width: 40px;
+                    height: 40px;
+                  }
+                </style>
+                <script type="text/javascript">
+                  x = navigator.geolocation;
+                  x.getCurrentPosition(success, failure);
+                  function success(position) {
+                    var myLat = position.coords.latitude;
+                    var myLong = position.coords.longitude;
+                    var coords = new google.maps.LatLng(myLat, myLong);
+                    var mapOptions = {
+                      zoom: 9,
+                      center: coords,
+                      mapTypedId: google.maps.mapTypedId.ROADMAP
+                    }
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                    var marker = new google.maps.Marker({ map: map, position: coords });
+                  }
+                  function failure() { }
+                </script>
+                </head>
+                
+                <body>
+                  <div id="map"></div>
               <img src="map.gif" alt="Location" width="40" height="50">
             </div>
           </div>
@@ -88,28 +118,28 @@
         <div class="row justify-content-end">
           <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="37" data-purecounter-duration="2" class="purecounter"></span>
               <img src="hot.gif" alt="Temperature" width="40" height="50">
             </div>
           </div>
 
           <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="2" class="purecounter"></span>
               <img src="rain.gif" alt="Humidity" width="40" height="50">
             </div>
           </div>
 
           <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="2" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="2" class="purecounter"></span>
               <img src="calendar.gif" alt="Date" width="40" height="50">
             </div>
           </div>
 
           <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
-              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="5" class="purecounter"></span>
               <img src="clock.gif" alt="Date" width="40" height="50">
               
             </div>
